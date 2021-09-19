@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8"/>
+    <title>MonoidMusician / ViolonScheelist</title>
+    <link href="styles.css" type="text/css" rel="stylesheet"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+    <link rel="manifest" href="/site.webmanifest"/>
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"/>
+    <meta name="msapplication-TileColor" content="#1f6e3e"/>
+    <meta name="theme-color" content="#ffffff"/>
+    <style>
+      h1 {
+        color: #dff5ed;
+      }
+      h2 {
+        color: white;
+      }
+    </style>
+  </head>
+  <body style="background-color: #21653c">
+    <h1><a href="monoidmusician.html">Verity James Scheel</a></h1>
+    <p>Cellist, programmer, mathematician, with many other interests besides.</p>
+    <p>Proudly trans, autistic, <a href="https://neuroqueer.com/neuroqueer-an-introduction/">neuroqueer</a> – <a href="https://pronoun.is/she?or=they&or=xe&or=he">she/they/xe/he</a></p>
+    <div id="portals">
+      <div id="monoidmusician">
+        <h2><a href="monoidmusician.html">MonoidMusician</a></h2>
+        <h3>Senior Project</h3>
+        <div class="desc">
+          <p>
+            My senior undergrad project is going to be on the language Dhall, which is essentially a typed lambda calculus with dependent types, impredicativity, and product and sum types (records and (tagged) unions).
+            It is designed as a configuration language, with guaranteed termination of evaluation and other security guarantees.
+            In order for more languages/libraries to have implementations, it avoids overly fancy type system features so that it remains easy to implement.
+            In most cases, this means leaving the burden on the programmer-user to specify all types, to type-inference is straightforward.
+            This makes writing Dhall verbose and tedious, so I want to see what I can do to add more convenience while retaining ease of implementation.
+          </p>
+          <p>
+            In particular, I want to divide my contributions into two parts: parts that add expressivity (which all implementations will have to support), and optional parts that just allow the programmer to work less for the same results.
+          </p>
+          <p>
+            For the first part, I will add universe and row polymorphism.
+            This will add a lot of expressivity: universe polymorphism means we can make much better use of dependent types, and row polymorphism will mean that more builtin operators can be given types and user code can take better advantage of the flexibility of being generic over the shape of data.
+            I still need to work out the details to see if I can get the theory the way I want it, but something along these lines should be possible.
+            In particular, I want universe and row variables to remain mostly implicit, so that it resembles existing code very closely.
+          </p>
+          <p>
+            The second part is kind of the real motivation: to infer not only universe and row variables, but all types via unification.
+            The idea is that the user will leave type holes (or literally just omit types where they were syntactically required), and the typechecker will elaborate by filling these holes in.
+            (This elaboration will be the common interchange format, particular for implementations which do not support this unification.)
+            In fact this all but necessitates the first part, since otherwise the universes and rows implicitly lurking in the background of the typechecking algorithm would not be inferred with enough generality for the unknown holes.
+          </p>
+          <p>
+            I also want to approach unification from a different light.
+            Most algorithms rely on mutable variable state and produce weird global interactions, with no clear record of how it happened.
+            To be fair, global information sharing is kind of the point of unification.
+            But I want to keep with the bottom-up type inference approach, so the only downward flow of information will be from unification-variable substitution.
+            And every interaction will be kept track of, so you can see where types come from and what interactions occur.
+            This will make for clearer, more informative errors too.
+          </p>
+          <p>
+            The idea that you can infer most general types for any given term is called principal typings.
+            The Dhall syntax has a number of ambiguities which would make these principal types non-unique, so I want to introduce additional constructors like a “record-or-union” constructor that could be later known to be a record or union type (so it would unify with either, but of course not both at the same time).
+            I think with the right tweaks, this idea will work for Dhall, since it doesnʼt have too much ambiguity, and most of it is logically (or typally) related anyway.
+          </p>
+          <p>
+            My mathematical goals are to prove various properties of the typings.
+            In particular it would be nice to show that evaluation is still safe for partially inferred types and to characterize when full types can be inferred.
+          </p>
+          <p>
+            I also want to mechanize the standard so that the rules are machine-parsable and amenable to code generation.
+            Actually I just want to codegen my whole implementation … Iʼve always been better at metaprogramming than actual programming.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

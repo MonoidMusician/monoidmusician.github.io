@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;600&family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;500;700&family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap');
+
+
+
+body {
+  font-size: 16pt;
+  color: white;
+  font-family: "Simonetta";
+}
+::selection {
+  background-color: #42b9b988;
+}
+a[href] {
+  color: inherit;
+  text-decoration: none;
+}
+p a[href] {
+  text-decoration: dotted white underline;
+}
+emph {
+  font-weight: bolder;
+}
+h1 {
+  font-size: calc(max(20px, min(7.5vw, 8vh, 45px)));
+  margin-bottom: 0px;
+  line-height: 1;
+  font-family: 'Cinzel Decorative';
+  text-align: center;
+  color: #dff5ed;
+  transition: color 0.6s;
+  cursor: pointer;
+}
+h1:hover {
+  color: #3bf142;
+}
+h1 + p, h1 + p + p {
+  font-family: 'Simonetta';
+  font-style: italic;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+#portals > * {
+  margin-top: 2em;
+  border-top: 1px solid #86cad1;
+  padding-top: 2em;
+}
+hr {
+  border-color: #86cad1;
+}
+#portals > * > * {
+  margin: auto; text-align: center;
+}
+#portals > * > a > img {
+  max-width: 90vw;
+  max-height: calc(max(100px, 70vh - 70px));
+  display: block; margin: auto;
+  border-radius: 50%;
+}
+#portals > * > img {
+  max-width: 90vw;
+  max-height: calc(max(100px, 70vh - 70px));
+  display: block; margin: auto;
+}
+h2 {
+  font-size: 30pt;
+  font-family: "Alegreya";
+  color: white;
+  transition: color 0.6s;
+}
+h2:hover {
+  color: #86cad1;
+}
+h3 {
+  font-family: "Alegreya";
+}
+#demed > h2:hover {
+  color: #ee94b9;
+}
+#monoidmusician > h2:hover {
+  color: #3bf142;
+}
+#violonscheelist > h2:hover {
+  color: #d06f46;
+}
+
+#logo {
+  transform: rotate(0deg);
+  transition: transform 0.6s;
+  cursor: pointer;
+  border-radius: 50%;
+}
+#logo:hover {
+  transform: rotate(7deg);
+}
+
+#portals ul, #portals ul li, #portals ul ul li {
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+  list-style-type: none;
+}
+#portals ul {
+  font-size: 20pt;
+}
+#portals li::before, #portals li::after {
+  content: " • ";
+}
+
+#portals div.desc, div.longform p {
+  padding: 0 10%;
+  margin: auto;
+  text-align: justify;
+}
+div.longform p {
+  text-indent: 2em;
+}
+
+@media (max-width: 600px) {
+  #portals div.desc, div.longform p {
+    text-align: left;
+  }
+  div.longform p {
+    text-indent: 1em;
+  }
+}
+
+div.poem {
+  white-space: pre-line;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+div.poem p {
+  text-align: left;
+  margin: 0 2em;
+  margin-top: -2ex;
+}
