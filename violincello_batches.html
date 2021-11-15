@@ -24,24 +24,59 @@ body>div{
   align-items: center;
   scroll-snap-align: center;
   scroll-snap-stop: always;
+  flex-direction: column;
 }
-body>div>div {
+body>div>div.soundcloud {
+  width: 100%;
+  margin-bottom: 2em;
+  display: flex;
+  flex-direction: row;
 }
-</style></head>
+</style>
+<script type="text/javascript" src="https://w.soundcloud.com/player/api.js"></script>
+</head>
 <body class="c37 dark"></body>
 <script>
 (function() {
+  function b(v) {
+    return v != null && v != "false";
+  }
   var params = new URLSearchParams(window.location.search);
-  var dark = params.get("dark") != null
-  if (!dark) {document.body.classList.remove("dark")}
+  var dark = b(params.get("dark"));
+  if (!dark) {document.body.classList.remove("dark")};
+  var soundcloud = b(params.get("soundcloud"));
+  if (soundcloud) {
+    SC.widgets = {};
+    SC.playthrough = true;
+    SC.first = undefined;
+    SC.current = undefined;
+    SC.reset = false;
+    SC.play = function() {
+      if (SC.current === undefined) {
+        SC.current = SC.first;
+      }
+      var widget = SC.widgets[SC.current];
+      if (!widget) return;
+      if (SC.reset) {
+        widget.seekTo(0);
+        SC.reset = false;
+      }
+      var e = document.getElementById("sc_"+SC.current).parentElement.parentElement;
+      e.scrollIntoView({behavior: 'smooth'});
+      widget.play();
+    }
+  }
   var rs = params.get("batch");
   if (rs) rs = rs.split(",");
   else rs = [...Array(30).keys()].map(i => ''+(i+1));
-  rs.forEach(function(r) {
+  rs.forEach(function(r, r_index) {
     if (!r || +r < 1 || +r > 30 || +r !== Math.floor(+r)) {
       r = ''+Math.floor(Math.random()*30+1);
     }
     if (r.length < 2) { r = '0'+r; }
+    rs[r_index] = r;
+  });
+  rs.forEach(function(r, r_index) {
     var src = 'snippet'+r+'.svg';
     var ddiv = document.createElement('div');
     var div = document.createElement('div');
@@ -60,9 +95,47 @@ body>div>div {
     span.textContent = texts[+r];
     p.appendChild(span);
     ddiv.appendChild(p);
-    var ddiv2 = document.createElement("div");
+    var ddiv2 = document.createElement("div"); ddiv2.className = "batch";
     ddiv2.appendChild(ddiv);
-    document.body.appendChild(ddiv2);
+    var ddiv3 = document.createElement("div");
+    if (soundcloud) {
+      var sdiv = document.createElement("div"); sdiv.className = "soundcloud";
+      ddiv3.appendChild(ddiv2);
+      ddiv3.appendChild(sdiv);
+      document.body.appendChild(ddiv3);
+      ["batch","snippet"].forEach((track, issnippet) => {
+        var iframe = document.createElement("iframe");
+        iframe.id = "sc_"+track+r;
+        iframe.style.width = "100%";
+        iframe.style.height = "20px";
+        iframe.scrolling = "no";
+        iframe.frameborder = "no";
+        iframe.style.border = "none";
+        iframe.allow = "autoplay";
+        iframe.src = "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/violonscheelist/"+track+r+"&inverse="+!!(dark)+"&color=8d310e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&show_artwork="+!!(issnippet)+"&show_playcount=false";
+        sdiv.appendChild(iframe);
+        if (!SC.first) SC.first = track + r;
+        var widget = SC.widgets[track + r] = SC.Widget(iframe);
+        var next = issnippet ? ((r_index+1) in rs) ? "batch"+rs[r_index+1] : undefined : "snippet"+r;
+        console.log(track + r, widget, iframe, next);
+        widget.bind(SC.Widget.Events.PLAY, function(e) {
+          console.log(track + r, e);
+          SC.current = track + r;
+          SC.reset = false;
+        });
+        widget.bind(SC.Widget.Events.FINISH, function(e) {
+          console.log(track + r, e, next);
+          SC.current = next;
+          SC.reset = true;
+          if (SC.playthrough && next !== undefined) {
+            SC.play();
+          }
+        });
+      });
+    } else {
+      ddiv3.appendChild(ddiv2);
+      document.body.appendChild(ddiv3);
+    }
   });
 })();
 </script>
