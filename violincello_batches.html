@@ -67,7 +67,12 @@ body>div>div.soundcloud {
     }
   }
   var rs = params.get("batch");
-  if (rs) rs = rs.split(",");
+  if (rs === "inorder") rs = [
+    11,01,08,02,09,03,14,10,16,20,
+    18,04,07,12,13,21,29,30,05,06,
+    26,25,23,17,24,28,15,27,22,19,
+  ].map(i => ''+i);
+  else if (rs) rs = rs.split(",");
   else rs = [...Array(30).keys()].map(i => ''+(i+1));
   rs.forEach(function(r, r_index) {
     if (!r || +r < 1 || +r > 30 || +r !== Math.floor(+r)) {
