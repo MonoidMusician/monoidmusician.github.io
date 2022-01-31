@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" style="">
   <head>
     <meta charset="utf-8"/>
     <title>MonoidMusician / ViolonScheelist</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="styles.css" type="text/css" rel="stylesheet"/>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
@@ -20,9 +21,124 @@
       }
     </style>
   </head>
-  <body style="background-color: #174a2c">
+  <body style="background-color: #174a2c;">
     <h1><a href="entry.html">Verity James Scheel</a></h1>
-    <p style="width: fit-content; width: -moz-fit-content; margin: auto;"><a href="entry.html"><img id="logo" src="monoidmusicianviolonscheelist.jpg" style="max-width: 90vw; max-height: calc(max(100px, 70vh - 70px)); display: block; margin: auto;"/></a></p>
+    <style>
+      /*
+      img {
+        animation-duration: 3s;
+        animation-name: osc;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+
+      @keyframes osc {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+      /**/
+
+      img {
+        /*
+        animation-duration: 2s;
+        animation-name: osc;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
+        */
+      }
+
+      @keyframes osc {
+        from {
+          transform: translate(0) rotate(0);
+        }
+
+        to {
+          /*transform: translate(calc(max(50vw, 1.1 * min(90vw, max(100px, 70vh - 70px))))) rotate(calc(1rad * (min(90vw, max(100px, 70vh - 70px)) / max(50vw, 1.1 * min(90vw, max(100px, 70vh - 70px))))));*/
+          transform: translate(calc(1.1 * min(90vw, max(100px, 70vh - 70px)))) rotate(calc(1.1 * 2rad));
+        }
+      }
+    </style>
+    <div style="max-width: 100vw; overflow: hidden;">
+      <p id="logos" style="height: calc(min(90vw, max(100px, 70vh - 70px))); width: calc(min(90vw, max(100px, 70vh - 70px))); margin: auto; position: relative;">
+        <img src="monoidmusician.jpg" style="width: calc(min(90vw, max(100px, 70vh - 70px))); display: block; margin: auto; position: absolute; left: 0; right: 0; border-radius: 50%;"/>
+        <img src="violonscheelist.jpg" style="width: calc(min(90vw, max(100px, 70vh - 70px))); display: block; margin: auto; position: absolute; left: 0; right: 0; border-radius: 50%;"/>
+        <img src="violonscheelistmonoidmusician.jpg" style="width: calc(min(90vw, max(100px, 70vh - 70px))); display: block; margin: auto; position: absolute; left: 0; right: 0; border-radius: 50%;"/>
+        <img src="monoidmusicianviolonscheelist.jpg" style="width: calc(min(90vw, max(100px, 70vh - 70px))); display: block; margin: auto; position: absolute; left: 0; right: 0; border-radius: 50%;"/>
+      </p>
+    </div>
+    <script>
+      var imgs = document.getElementById("logos").querySelectorAll("img");
+      var circ = i => (i + imgs.length) % imgs.length;
+      var prev = i => circ(i-1);
+      var next = i => circ(i+1);
+      var idx = 0;
+      var scale = 1.02;
+      var slot = i => i == idx ? 0 : i == prev(idx) ? -1 : i == next(idx) ? 1 : undefined;
+      var transform = t => `translate(calc(${t} * min(90vw, max(100px, 70vh - 70px)))) rotate(calc(${t} * 2rad))`;
+      var disp = t => t == null || Math.abs(t) > 1 ? "none" : "initial";
+      var properties = t => ({ transform: transform(scale*(t || 0)), display: disp(t), opacity: disp(t) === "none" ? 0 : 1 });
+      var goto = (i,t,t0) => {
+        var img = imgs[circ(i)];
+        if (t === undefined) {
+          img.style.display = "none";
+          return;
+        }
+        var from = { offset: 0, ...properties(t0), display: "initial" };
+        var to = { offset: 1, ...properties(t) };
+        var animation = [from, to];
+        img.style.display = "initial";
+        img.style.cursor = "";
+        img.animate(animation, { duration: dur*1000, easing: "ease-in-out" }).onfinish = () => {
+          reached(i, t);
+          delete to.offset;
+        };
+      };
+      var reached = (i,t) => {
+        var img = imgs[circ(i)];
+        if (t === undefined) {
+          img.style.display = "none";
+          return;
+        }
+        img.style.cursor = t === 0 ? "pointer" : t === -1 ? "e-resize" : t === 1 ? "w-resize" : "";
+        Object.assign(img.style, properties(t));
+      };
+      var dur = 1.6;
+      var later = f => setTimeout(f, dur*1000);
+      var lock = false;
+      Array.prototype.forEach.call(imgs, function(img, i) {
+        reached(i, slot(i));
+        img.onclick = () => {
+          if (lock) return;
+          var s = slot(i);
+          if (s === 0) {
+            document.querySelector("h1 > a").click();
+          } else if (s) {
+            lock = true;
+            var n = circ(i + s);
+            var p = circ(i - s);
+            var o = circ(i - s - s);
+            goto(i, 0, s);
+            goto(n, +s, +s+s);
+            goto(p, -s, 0);
+            goto(o, -2*s, -s);
+          }
+          if (lock) {
+            later(function() {
+              idx += (s || 0);
+              idx = circ(idx);
+              lock = false;
+              console.log("unlock");
+            });
+          }
+        };
+      });
+    </script>
     <h1 style="font-size: calc(max(18px, min(7.5vw, 6vh, 32px))); font-family: 'Cinzel Decorative'; text-align: center;"><a href="entry.html">Monoid&#8203;MusiciaN</a> <br/> <a href="entry.html">& Violon&#173;Scheelist</a></h1>
   </body>
 </html>
