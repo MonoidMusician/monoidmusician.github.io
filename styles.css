@@ -192,6 +192,14 @@ dd {
   padding-left: 8px;
   line-height: 1.1;
 }
+dd a[href] {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  -webkit-text-decoration: underline;
+  -webkit-text-decoration-thickness: 1px;
+  -webkit-text-underline-offset: 2px;
+}
 
 @media (max-device-width: 600px) {
   dd {

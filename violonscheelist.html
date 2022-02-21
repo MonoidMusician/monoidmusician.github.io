@@ -41,9 +41,19 @@
         <br/>
         <a href="violincello.html"><img src="violonscheelist.jpg"/></a>
         <br/>
+        <div class="desc">
+          <p>Before you ask: Iʼve been playing cello for around <span id="celloing">16</span> years.</p>
+          <script>
+          document.getElementById("celloing").textContent = (function() {
+            return Math.floor((new Date().getTime() - new Date("sep 28 2005").getTime()) / (3600000 * 24 * 365));
+          })();
+          </script>
+        </div>
+        <br/>
         <ul>
           <li><a style="font-weight: bold;" href="violincello.html">Violincello [sic.] coming out recital!</a></li>
           <li><a href="performances.html">List of performances</a></li>
+          <li><a href="compositions.html">Compositions</a></li>
           <li><a href="bach-g-emoji.html">Prelude in G Emoji</a></li>
           <li><a href="https://monoidmusician.github.io/colorwheel/">Chromatic Shepard tone wheel</a></li>
         </ul>
