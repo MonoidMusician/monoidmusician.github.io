@@ -12,6 +12,7 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"/>
     <meta name="msapplication-TileColor" content="#1f6e3e"/>
     <meta name="theme-color" content="#ffffff"/>
+    <script type="text/javascript" src="interaction.js"></script>
     <style>
       h1 {
         color: #dff5ed;
@@ -32,112 +33,148 @@
       <div id="demed">
         <h2><a href="demed.html">ΔΗΜΗΔ (dēmēd)</a></h2>
         <h3>Essences</h3>
-        <div class="longform">
+        <div class="longform" data-padding>
           <!-- I want to create a page on my website of things that have been very … not necessarily influential in like some markèd or specific way for me, but like noteworthy, exceptional, interesting, “famous” (fameworthy), … -->
           <p>This is a collection of noteworthy, interesting, and exceptional pieces of art and writing that I view as containing some essence of meaning. It is a celebration of the meaning we discover through creation, marvelling at what others have wrought and shared so that we may appreciate, reflect, and build upon it all.</p>
           <p>For some of these entries, I hope to bring light to lesser-known works that I believe deserve to be more widely appreciated, being worth engaging with, returning to, mulling over, and sharing. Nevertheless, a lot of these entries I think of as “iconic” – not necessarily in the sense of being famous, but because I in fact find myself coming back to them time and time again and sharing them with everyone I meet. Similarly, while some of them are influential in the historic sense, most are influential in the intimate sense that they have had a significant and lasting impact on my personal consciousness and artistic awareness. When possible, I detail the history of my relationship with each entry – most go back several years, having latched onto my mindʼs attention immediately and returning to visit my consciousness many times.</p>
           <p>However I do not believe in worshipping anything or anyone, just appreciating each for what it gives us. I hope you learn and find things you appreciate here!</p>
         </div>
-        <br/><hr/><br/>
-        <h4>The Musical</h4>
+        <br data-padding/><hr data-padding/><br data-padding/>
+        <h4 data-heading="4">The Musical</h4>
         <dl class="desc">
-          <dt><a class="item" href="https://www.youtube.com/watch?v=CWs4KSQr4Vw">Passacaille da Second Livre de pièces de clavecin, Huitième Ordre (1716)</a><br/><span class="info">Composed by François Couperin (1668–1733)</span></dt>
-          <dd>One of the most ornate, elaborate works I have heard from the Baroque era. I adore it! I first heard it on the radio while driving to church when I was 17 or 18. It is pretty repetitive, but thatʼs the point of a passacaille. It reminds me of a deep red tapestry or carpet embroidered with gold in heady patterns of swirls and flourishes.</dd>
-          <dt><a class="item" href="https://youtu.be/AByPgt3Ai8A">Scherzo in G Minor, Op. 13</a><br/><span class="info">Composed by Horatio Parker (1863-1919)</span></dt>
-          <dd>Another work I heard on the radio, while driving in St. Paul my senior year of high school. Also repetitive (being in the rondo style typical of scherzi), but cute and whimsical.</dd>
-          <dt><a class="item" href="https://youtu.be/f2gVhBxwRqg">Study for Player Piano No. 21 (Canon X)</a><br/><span class="info">Composed by Conlon Nancarrow (1912–1997)</span></dt>
-          <dd>An absolutely chaotic piece for player piano, well beyond the realm of what could be played by a human. I think it just came across my YouTube suggestions one day, and Iʼve listened to a few other similar pieces by Nancarrow.</dd>
-          <dt><a class="item" href="https://www.youtube.com/watch?v=UY8k2iTCVjE">Russian [Maidenʼs] Song (Chanson Russe)</a><br/><span class="info">Composed by Igor Stravinsky (1882–1971), performed by Mstislav Rostropovich</span></dt>
-          <dd>This is one of many pieces in a collection of albums of performances of Mstislav Rostropovich that I got for Christmas of 2014. I find it soothing, plaintive, innocent. I guess it is Stravinskyʼs arrangement for violin and piano of Parashaʼs aria from his 1922 opera Mavra. Itʼs hard to find played on cello elsewhere, and no violinists bring the same flair to it either.</dd>
-          <dt><a class="item" href="https://youtu.be/oOqvH8hAv-U">Concerto For Cello, 17 Wind Instruments and Percussion</a><br/><span class="info">Composed by Boris Tishchenko (1939–2010), performed by Mstislav Rostropovich</span></dt>
-          <dd>Another piece from the same collection of Rostropovich, but very angsty and discordant. I listened to this often in the cafeteria at high school to drown out the clamor and sensory overwhelm of lunchtimes. Over the years I have heard more and more structure in the piece and it starts to make more sense in my head.</dd>
+          <dt id="couperin_passacaille"><a href="#couperin_passacaille" data-item></a><a class="item" href="https://www.youtube.com/watch?v=CWs4KSQr4Vw">Passacaille da Second Livre de pièces de clavecin, Huitième Ordre (1716)</a><br/><span class="info">Composed by François Couperin (1668–1733)</span></dt>
+          <dd data-content="couperin_passacaille">One of the most ornate, elaborate works I have heard from the Baroque era. I adore it! I first heard it on the radio while driving to church when I was 17 or 18. It is pretty repetitive, but thatʼs the point of a passacaille. It reminds me of a deep red tapestry or carpet embroidered with gold in heady patterns of swirls and flourishes.</dd>
+          <dt id="parker_scherzo"><a href="#parker_scherzo" data-item></a><a class="item" href="https://youtu.be/AByPgt3Ai8A">Scherzo in G Minor, Op. 13</a><br/><span class="info">Composed by Horatio Parker (1863-1919)</span></dt>
+          <dd data-content="parker_scherzo">Another work I heard on the radio, while driving in St. Paul my senior year of high school. Also repetitive (being in the rondo style typical of scherzi), but cute and whimsical.</dd>
+          <dt id="nancarrow_study21"><a href="#nancarrow_study21" data-item></a><a class="item" href="https://youtu.be/f2gVhBxwRqg">Study for Player Piano No. 21 (Canon X)</a><br/><span class="info">Composed by Conlon Nancarrow (1912–1997)</span></dt>
+          <dd data-content="nancarrow_study21">An absolutely chaotic piece for player piano, well beyond the realm of what could be played by a human. I think it just came across my YouTube suggestions one day, and Iʼve listened to a few other similar pieces by Nancarrow.</dd>
+          <dt id="stravinsky_chanson"><a href="#stravinsky_chanson" data-item></a><a class="item" href="https://www.youtube.com/watch?v=UY8k2iTCVjE">Russian [Maidenʼs] Song (Chanson Russe)</a><br/><span class="info">Composed by Igor Stravinsky (1882–1971), performed by Mstislav Rostropovich</span></dt>
+          <dd data-content="stravinsky_chanson">This is one of many pieces in a collection of albums of performances of Mstislav Rostropovich that I got for Christmas of 2014. I find it soothing, plaintive, innocent. I guess it is Stravinskyʼs arrangement for violin and piano of Parashaʼs aria from his 1922 opera Mavra. Itʼs hard to find played on cello elsewhere, and no violinists bring the same flair to it either.</dd>
+          <dt id="tishchenko_concerto"><a href="#tishchenko_concerto" data-item></a><a class="item" href="https://youtu.be/oOqvH8hAv-U">Concerto For Cello, 17 Wind Instruments and Percussion</a><br/><span class="info">Composed by Boris Tishchenko (1939–2010), performed by Mstislav Rostropovich</span></dt>
+          <dd data-content="tishchenko_concerto">Another piece from the same collection of Rostropovich, but very angsty and discordant. I listened to this often in the cafeteria at high school to drown out the clamor and sensory overwhelm of lunchtimes. Over the years I have heard more and more structure in the piece and it starts to make more sense in my head.</dd>
+          <dt id="aux_eppes"><a href="#aux_eppes" data-item></a><a class="item" href="http://www.mikesolomon.org/music/auxeppes.html">aux Eppes</a><br/><span class="info">Composed by Mike Solomon, for/from the Eppes Quartet</span></dt>
+          <dd data-content="aux_eppes"></dd>
         </dl>
-        <h5>Instruments</h5>
+        <h5 data-heading="5">Moments</h5>
         <dl class="desc">
-          <dt><a class="item" href="https://youtu.be/ZDJfmUZPX_A">Dongsok Shin discusses the Lautenwerck & plays J.S. Bach: Prelude, Fugue & Allegro in E-Flat BWV 998</a></dt>
-          <dd>I believe this video went a little viral around the time of its posting, being featured in a <a href="https://www.yourclassical.org/story/2021/03/25/bachs-favorite-instrument-youve-probably-never-heard-of-the-longlost-lautenwerck">NPR article</a> that also included an unforgettable quote comparing harpsichords to “two skeletons copulating on a tin roof in a thunderstorm”. The Lautenwerck is a really interesting instrument with a beautiful sound! Interesting scholarly arguments as to why it is the correct instrument to use.</dd>
-          <dt><a class="item" href="https://youtu.be/wbH3JYfRjOQ">Cello Suite no. 6 in D major BWV 1012</a><br/><span class="info">Composed by J.S. Bach (1865–1750), perfomed by Sergey Malov</span></dt>
-          <dd>Ahh how easy Malov makes this suite look on a five-stringed instrument – and not just any five-stringed instrument, but a violoncello da spalla! I always like to comment that this suite sits at the frustrating edge of whatʼs possible to play on a four-stringed ʼcello, as if Bach knew and was playing a joke on us, that we are stuck performing it that way. Relistening to a bit of this before my recital, I was struck at how Malov and I chose similar passages to embellish, but with very different ornaments.</dd>
+          <dt id="tune_in_festival_2021"><a href="#tune_in_festival_2021" data-item></a><a class="item" href="https://online.cap.ucla.edu/the-tune-in-festival-2021-on-demand">The Tune In Festival 2021</a></dt>
+          <dd data-content="tune_in_festival_2021"></dd>
         </dl>
-        <h5>Baroque, Early Music</h5>
-        <div class="desc">
+        <h5 data-heading="5">Instruments</h5>
+        <dl class="desc">
+          <dt id="lautenwerck"><a href="#lautenwerck" data-item></a><a class="item" href="https://youtu.be/ZDJfmUZPX_A">Dongsok Shin discusses the Lautenwerck & plays J.S. Bach: Prelude, Fugue & Allegro in E-Flat BWV 998</a></dt>
+          <dd data-content="lautenwerck">I believe this video went a little viral around the time of its posting, being featured in a <a href="https://www.yourclassical.org/story/2021/03/25/bachs-favorite-instrument-youve-probably-never-heard-of-the-longlost-lautenwerck">NPR article</a> that also included an unforgettable quote comparing harpsichords to “two skeletons copulating on a tin roof in a thunderstorm”. The Lautenwerck is a really interesting instrument with a beautiful sound! Interesting scholarly arguments as to why it is the correct instrument to use.</dd>
+          <dt id="da_spalla"><a href="#da_spalla" data-item></a><a class="item" href="https://youtu.be/wbH3JYfRjOQ">Cello Suite no. 6 in D major BWV 1012</a><br/><span class="info">Composed by J.S. Bach (1865–1750), perfomed by Sergey Malov</span></dt>
+          <dd data-content="da_spalla">Ahh how easy Malov makes this suite look on a five-stringed instrument – and not just any five-stringed instrument, but a violoncello da spalla! I always like to comment that this suite sits at the frustrating edge of whatʼs possible to play on a four-stringed ʼcello, as if Bach knew and was playing a joke on us, that we are stuck performing it that way. Relistening to a bit of this before my recital, I was struck at how Malov and I chose similar passages to embellish, but with very different ornaments.</dd>
+          <dt id="speaking_piano"><a href="#speaking_piano" data-item></a><a class="item" href="https://youtu.be/muCPjK4nGY4">Speaking Piano</a></dt>
+          <dd data-content="speaking_piano">This is a fascinating experiment of replaying the frequencies of human speech through a piano. It can be pretty eerie (especially given the choice of text!), but also really cool.</dd>
+          <dt id="orthotonophonium"><a href="#orthotonophonium" data-item></a><a class="item" href="https://youtu.be/Zd9Pl4ox0iM">Das Orthotonophonium</a></dt>
+          <dd data-content="orthotonophonium"></dd>
+        </dl>
+        <h5 data-heading="5">Baroque, Early Music</h5>
+        <div class="desc" data-padding>
           <p>Did you know that “Baroque” was originally a term of derision? See <a href="https://en.wikipedia.org/wiki/Baroque#Origin_of_the_word">Wikipedia</a> for a discussion of some possible origins (none of them flattering).</p>
         </div>
         <dl class="desc">
-          <dt><a class="item" href="https://youtu.be/o4-xH5egEco">Sonatas for Violoncello</a><br/><span class="info">Composed by Jakob Klein (1688–1748), performed by Kristin von der Goltz, Hille Perl, Lee Santana</span></dt>
-          <dd>One of my favorite collections since the time I learned you can stream hours of Baroque music at a time on YouTube. I finally started learning these in 2020 and I was pleasantly surprised at how well I was able to learn them at A441 after listening to them at A415, a lot of the knowledge carried over.</dd>
-          <dt><a class="item" href="https://youtu.be/i3T5ElPFgmE">La Folia</a><br/><span class="info">Composed by Marin Marais, elaboration and performance by Giovanni Sollima</span></dt>
-          <dd>I came across this by looking up Sollima after being introduced to his Lamentatio. This La Folia is a marvelous elaboration of the classic tune, with rarely-seen but natural-seeming cello technique. Would love to play it like this one day.</dd>
-          <dt><a class="item" href="https://youtu.be/DzxlMfUzqIM">Vertigo</a><br/><span class="info">Composed by Pancrace Royer, performed by Jean Rondeau</span></dt>
-          <dd>You need a little harpsichord shredding in your life. Courtesy of the rockstar harpsichordist Jean Rondeau.</dd>
-          <dt><a class="item" href="https://youtu.be/YwR3I7gZXdE">La Marche des Scythes</a><br/><span class="info">Composed by Pancrace Royer and performed by Marco Mencoboni</a></dt>
-          <dd>Classy. Poised. Grounded.</dd>
-          <dt><a class="item" href="https://youtu.be/Z0IpzsF8HK4">Anna Fusek and Ensemble Kavka: Italian Bach</a></dt>
-          <dd>Have you ever heard a recorder sound so pristine, virtuosic?</dd>
+          <dt id="klein_sonatas"><a href="#klein_sonatas" data-item></a><a class="item" href="https://youtu.be/o4-xH5egEco">Sonatas for Violoncello</a><br/><span class="info">Composed by Jakob Klein (1688–1748), performed by Kristin von der Goltz, Hille Perl, Lee Santana</span></dt>
+          <dd data-content="klein_sonatas">One of my favorite collections since the time I learned you can stream hours of Baroque music at a time on YouTube. I finally started learning these in 2020 and I was pleasantly surprised at how well I was able to learn them at A441 after listening to them at A415, a lot of the knowledge carried over.</dd>
+          <dt id="sollima_la_folia"><a href="#sollima_la_folia" data-item></a><a class="item" href="https://youtu.be/i3T5ElPFgmE">La Folia</a><br/><span class="info">Composed by Marin Marais, elaboration and performance by Giovanni Sollima</span></dt>
+          <dd data-content="sollima_la_folia">I came across this by looking up Sollima after being introduced to his Lamentatio. This La Folia is a marvelous elaboration of the classic tune, with rarely-seen but natural-seeming cello technique. Would love to play it like this one day.</dd>
+          <dt id="royer_vertigo"><a href="#royer_vertigo" data-item></a><a class="item" href="https://youtu.be/DzxlMfUzqIM">Vertigo</a><br/><span class="info">Composed by Pancrace Royer, performed by Jean Rondeau</span></dt>
+          <dd data-content="royer_vertigo">You need a little harpsichord shredding in your life. Courtesy of the rockstar harpsichordist Jean Rondeau.</dd>
+          <dt id="royer_marche"><a href="#royer_marche" data-item></a><a class="item" href="https://youtu.be/YwR3I7gZXdE">La Marche des Scythes</a><br/><span class="info">Composed by Pancrace Royer and performed by Marco Mencoboni</a></dt>
+          <dd data-content="royer_marche">Classy. Poised. Grounded.</dd>
+          <dt id="fusek"><a href="#fusek" data-item></a><a class="item" href="https://youtu.be/Z0IpzsF8HK4">Anna Fusek and Ensemble Kavka: Italian Bach</a></dt>
+          <dd data-content="fusek">Have you ever heard a recorder sound so pristine, virtuosic?</dd>
         </dl>
-        <h5>(Chamber & Orchestral) Classics</h5>
-        <div class="desc">
+        <h5 data-heading="5">(Chamber & Orchestral) Classics</h5>
+        <div class="desc" data-padding>
           <p>These are works that everyone in my area of music (mostly string chamber music!) will likely be familiar with.</p>
         </div>
         <dl class="desc">
-          <dt><a class="item" href="https://youtu.be/9JTH4ZdJcjk">String Octet in E-flat major, Op. 20</a><br/><span class="info">Composed by Franz Mendelssohn (1809–1847)</span></dt>
-          <dd>This is such a classic chamber work that almost every chamber music festival I go to has a sight reading session on this piece, with as many people as want to join. I played it in 2017, as second cello. This particular recording is interesting because of the seating: I most often see it done in “order” (violins, viole, celli, each in numeric order), but this seating of quartet plus reverse quartet actually seems to make a lot of sense in terms of the pairings written into the score, so I wonder if it is what Mendelssohn actually intended – I have no firm analysis or experience with it to say.</dd>
+          <dt id="mendelssohn_octet"><a href="#mendelssohn_octet" data-item></a><a class="item" href="https://youtu.be/9JTH4ZdJcjk">String Octet in E-flat major, Op. 20</a><br/><span class="info">Composed by Franz Mendelssohn (1809–1847)</span></dt>
+          <dd data-content="mendelssohn_octet">This is such a classic chamber work that almost every chamber music festival I go to has a sight reading session on this piece, with as many people as want to join. I played it in 2017, as second cello. This particular recording is interesting because of the seating: I most often see it done in “order” (violins, viole, celli, each in numeric order), but this seating of quartet plus reverse quartet actually seems to make a lot of sense in terms of the pairings written into the score, so I wonder if it is what Mendelssohn actually intended – I have no firm analysis or experience with it to say.</dd>
+          <dt id="mahler_3"><a href="#mahler_3" data-item></a><a class="item" href="https://youtube.com/playlist?list=OLAK5uy_lQ_RZY2Ae_KXyxDPYD0rURCWoLOxlaTIQ">Symphony No. 3</a><br/><span class="info">Composed by Gustav Mahler (1860–1911), conducted by Lorin Maazel</span></dt>
+          <dd data-content="mahler_3"></dd>
         </dl>
-        <h5>Vocal</h5>
-        <div class="desc">
+        <h5 data-heading="5">Vocal</h5>
+        <div class="desc" data-padding>
           <p>By no means am I a vocal music expert, but I love choral music, I think it has qualities that cannot be conveyed through other instruments. I sang in church choir for many years so many familiar pieces feel particularly comforting. Iʼve started to get into opera music too, mostly early opera (Baroque, pre-Baroque, Classical).</p>
         </div>
         <dl class="desc">
-          <dt><a class="item" href="https://youtube.com/playlist?list=OLAK5uy_mcJ0zdDwLfO5fstrYVtveJVaKvUwxiGFs">En Albion: Medieval Polyphony in England</a><br/><span class="info">Huelgas Ensemble of Paul Van Nevel</span></dt>
-          <dd>I think I happened upon this piece by YouTube suggestions after exploring some of the music mentioned by John Baez in his blog posts: <a href="https://johncarlosbaez.wordpress.com/2021/04/23/dufays-isorhythmic-motets/">Dufayʼs Isorhythmic Motets</a>, <a href="https://johncarlosbaez.wordpress.com/2021/04/29/renaissance-polyphony-the-franco-flemish-school/">Renaissance Polyphony: the Franco-Flemish School</a>, and <a href="https://johncarlosbaez.wordpress.com/2021/06/15/jacob-obrecht/">Jacob Obrecht</a>. The vocal textures are stunningly beautiful and it creates the perfect space for my bodyʼs relaxation.</dd>
-          <dt><a class="item" href="https://youtu.be/Jeil9S2exIU">Aria “Erbarme Dich” from St. Matthew Passion BWV 244</a><br/><span class="info">Composed by J.S. Bach (1685–1750), performed by Nathalie Stutzmann and Satomi Watanabe</span></dt>
-          <dd>Sublime. Exquisite. Stunning. What more can I say?</dd>
-          <dt><a class="item" href="https://youtu.be/JoOPG4eloPs">Requiem: Out of the Deep</a><br/><span class="info">Composed by John Rutter (1945–)</span></dt>
-          <dd>Being a staple piece for cello and choir, Iʼve played this in church several times (including 28 February 2016). This is actually a great recording of it with a wonderfully rich cello sound. My only complaint is that the cello doesnʼt cut through the choir at the climax of the piece.</dd>
-          <dt><a class="item" href="https://youtu.be/JUpZ1Npj23M">Orfeo ed Euridice (Vienna version, 1762)</a><br/><span class="info">Composed by Christoph Gluck (1714–1787), starring Bejun Mehta as Orfeo and Eva Liebau as Euridice</span></dt>
-          <dd>This is a stunning staging of one of my favorite operas, with even the conductor and instrumentalists in period costume. I came across this piece in a class on Greek Mythology in music, and I did a paper on operatic iterations of this myth of Orpheus and Eurydice so I listened quite closely to (parts of) this production besides just enjoying it. In my opinion the narrative texture is more substantial than the early Monteverdi iteration, and it is obviously much more serious than Offenbachʼs parody, and I enjoy it for those reasons, besides the musical qualities.</dd>
+          <dt id="en_albion"><a href="#en_albion" data-item></a><a class="item" href="https://youtube.com/playlist?list=OLAK5uy_mcJ0zdDwLfO5fstrYVtveJVaKvUwxiGFs">En Albion: Medieval Polyphony in England</a><br/><span class="info">Huelgas Ensemble of Paul Van Nevel</span></dt>
+          <dd data-content="en_albion">I think I happened upon this piece by YouTube suggestions after exploring some of the music mentioned by John Baez in his blog posts: <a href="https://johncarlosbaez.wordpress.com/2021/04/23/dufays-isorhythmic-motets/">Dufayʼs Isorhythmic Motets</a>, <a href="https://johncarlosbaez.wordpress.com/2021/04/29/renaissance-polyphony-the-franco-flemish-school/">Renaissance Polyphony: the Franco-Flemish School</a>, and <a href="https://johncarlosbaez.wordpress.com/2021/06/15/jacob-obrecht/">Jacob Obrecht</a>. The vocal textures are stunningly beautiful and it creates the perfect space for my bodyʼs relaxation.</dd>
+          <dt id="erbarme_dich"><a href="#erbarme_dich" data-item></a><a class="item" href="https://youtu.be/Jeil9S2exIU">Aria “Erbarme Dich” from St. Matthew Passion BWV 244</a><br/><span class="info">Composed by J.S. Bach (1685–1750), performed by Nathalie Stutzmann and Satomi Watanabe</span></dt>
+          <dd data-content="erbarme_dich">Sublime. Exquisite. Stunning. What more can I say?</dd>
+          <dt id="out_of_the_deep"><a href="#out_of_the_deep" data-item></a><a class="item" href="https://youtu.be/JoOPG4eloPs">Requiem: Out of the Deep</a><br/><span class="info">Composed by John Rutter (1945–)</span></dt>
+          <dd data-content="out_of_the_deep">Being a staple piece for cello and choir, Iʼve played this in church several times (including 28 February 2016). This is actually a great recording of it with a wonderfully rich cello sound. My only complaint is that the cello doesnʼt cut through the choir at the climax of the piece.</dd>
+          <dt id="orfeo_euridice"><a href="#orfeo_euridice" data-item></a><a class="item" href="https://youtu.be/JUpZ1Npj23M">Orfeo ed Euridice (Vienna version, 1762)</a><br/><span class="info">Composed by Christoph Gluck (1714–1787), starring Bejun Mehta as Orfeo and Eva Liebau as Euridice</span></dt>
+          <dd data-content="orfeo_euridice">This is a stunning staging of one of my favorite operas, with even the conductor and instrumentalists in period costume. I came across this piece in a class on Greek Mythology in music, and I did a paper on operatic iterations of this myth of Orpheus and Eurydice so I listened quite closely to (parts of) this production besides just enjoying it. In my opinion the narrative texture is more substantial than the early Monteverdi iteration, and it is obviously much more serious than Offenbachʼs parody, and I enjoy it for those reasons, besides the musical qualities.</dd>
         </dl>
-        <br/><hr/><br/>
-        <h4>The Visual</h4>
+        <br data-padding/><hr data-padding/><br data-padding/>
+        <h4 data-heading="4">The Visual</h4>
         <dl class="desc">
-          <dt><a class="item" href="https://inconvergent.net/generative/sand-spline/">Sand Splines</a><br/><span class="info">Created by Anders Hoff</span></dt>
-          <dd>In my opinion, one of the most breathtaking examples of generative art. Also one of the few that I know, heh. But I keep coming back to it, showing it to anyone I meet with an interest in doing art through programming.</dd>
-          <dt><a class="item" href="http://www.glukfonts.pl/font.php?font=Kleymissky">Kleymissky</a><br/><span class="info">Designed by Grzegorz Luksza aka Gluk</span></dt>
-          <dd>Glukʼs fonts range from austere but precise to ostentatious and flowing (my favorite), and even all of those things at once! Most are open source under the <a href="https://en.wikipedia.org/wiki/SIL_Open_Font_License">OFL</a>. Iʼve been impressed with his fonts for many years and have used them for various art projects and just for fun. Check out his <a href="http://www.glukfonts.pl/vcfont.php?font=LiserifF">animated vector fonts!</a></dd>
+          <dt id="sand_splines"><a href="#sand_splines" data-item></a><a class="item" href="https://inconvergent.net/generative/sand-spline/">Sand Splines</a><br/><span class="info">Created by Anders Hoff</span></dt>
+          <dd data-content="sand_splines">In my opinion, one of the most breathtaking examples of generative art. Also one of the few that I know, heh. But I keep coming back to it, showing it to anyone I meet with an interest in doing art through programming.</dd>
+          <dt id="kleymissky"><a href="#kleymissky" data-item></a><a class="item" href="http://www.glukfonts.pl/font.php?font=Kleymissky">Kleymissky Font</a><br/><span class="info">Designed by Grzegorz Luksza aka Gluk</span></dt>
+          <dd data-content="kleymissky">Glukʼs fonts range from austere but precise to ostentatious and flowing (my favorite), and even all of those things at once! Most are open source under the <a href="https://en.wikipedia.org/wiki/SIL_Open_Font_License">OFL</a>. Iʼve been impressed with his fonts for many years and have used them for various art projects and just for fun. Check out his <a href="http://www.glukfonts.pl/vcfont.php?font=LiserifF">animated vector fonts!</a></dd>
+          <dt id="xkcd"><a href="#xkcd" data-item></a><a class="item" href="https://xkcd.com">xkcd.com</a><br/><span class="info">By Randall Munroe.</span></dt>
+          <dd data-content="xkcd">
+            The most famous nerd webcomic. So famous and mystifying it has its own wiki dedicated to explaining and debating what every comic means: <a href="https://www.explainxkcd.com/">explainxkcd.com</a>. Do you even know how much of a nerd you have to be to appease a global readership from all over nerddom?! Ridiculous, touching, witty, strange, delightful, and sometimes (just sometimes) scientific. A few classics (but theyʼre all good):
+            <ul>
+              <li><a href="https://xkcd.com/936/">#936: Password Strength</a> (correct horse battery staple)</li>
+              <li><a href="https://xkcd.com/927/">#927: Standards</a></li>
+              <li><a href="https://xkcd.com/335/">#335: Mattress</a></li>
+              <li><a href="https://xkcd.com/1015/">#1015: Kerning</a></li>
+              <li><a href="https://xkcd.com/356/">#356: Nerd Sniping</a></li>
+              <li><a href="https://xkcd.com/303/">#303: Compiling</a></li>
+              <li><a href="https://xkcd.com/327/">#327: Exploits of a Mom</a> (<a href="https://www.explainxkcd.com/wiki/index.php/Little_Bobby_Tables">“Bobby Tables”</a>)</li>
+              <li><a href="https://xkcd.com/1190/">#1190: Time</a></li>
+            </ul>
+          </dd>
         </dl>
-        <br/><hr/><br/>
-        <h4>The Political</h4>
+        <br data-padding/><hr data-padding/><br data-padding/>
+        <h4 data-heading="4">The Political</h4>
         <dl class="desc">
-          <dt><a class="item" href="https://redvoice.news/transphobia-is-a-respectability-politic/">Transphobia is a Respectability Politic: Thoughts on Black Community Defense</a><br/><span class="info">Written by K.D. Wilson on Red Voice</span></dt>
-          <dd></dd>
+          <dt id="transphobia_respectability"><a href="#transphobia_respectability" data-item></a><a class="item" href="https://redvoice.news/transphobia-is-a-respectability-politic/">Transphobia is a Respectability Politic: Thoughts on Black Community Defense</a><br/><span class="info">Written by K.D. Wilson on Red Voice</span></dt>
+          <dd data-content="transphobia_respectability"></dd>
         </dl>
-        <h5>Disability Justice</h5>
-        <div class="desc">
+        <h5 data-heading="5">Disability Justice</h5>
+        <div class="desc" data-padding>
           <p>Nothing reads like a punch to the gut like the names of disability justice blogs.</p>
         </div>
         <dl class="desc">
-          <dt><a class="item" href="https://ballastexistenz.wordpress.com/2016/05/01/there-is-ableism-somewhere-at-the-heart-of-your-oppression-no-matter-what-your-oppression-might-be/">There is ableism somewhere at the heart of your oppression, no matter what your oppression might be.</a><br/><span class="info">Written by Mel Baggs on hir blog Ballastexistenz</span></dt>
-          <dd></dd>
-          <dt><a class="item" href="https://leavingevidence.wordpress.com/2022/01/16/you-are-not-entitled-to-our-deaths-covid-abled-supremacy-interdependence/">You Are Not Entitled To Our Deaths: COVID, Abled Supremacy & Interdependence</a><br/><span class="info">Written by Mia Mingus on her blog Leaving Evidence</span></dt>
-          <dd></dd>
+          <dt id="ableism_at_the_heart_of_your_oppression"><a href="#ableism_at_the_heart_of_your_oppression" data-item></a><a class="item" href="https://ballastexistenz.wordpress.com/2016/05/01/there-is-ableism-somewhere-at-the-heart-of-your-oppression-no-matter-what-your-oppression-might-be/">There is ableism somewhere at the heart of your oppression, no matter what your oppression might be.</a><br/><span class="info">Written by Mel Baggs on hir blog Ballastexistenz</span></dt>
+          <dd data-content="ableism_at_the_heart_of_your_oppression"></dd>
+          <dt id="not_entitled_to_our_deaths"><a href="#not_entitled_to_our_deaths" data-item></a><a class="item" href="https://leavingevidence.wordpress.com/2022/01/16/you-are-not-entitled-to-our-deaths-covid-abled-supremacy-interdependence/">You Are Not Entitled To Our Deaths: COVID, Abled Supremacy & Interdependence</a><br/><span class="info">Written by Mia Mingus on her blog Leaving Evidence</span></dt>
+          <dd data-content="not_entitled_to_our_deaths"></dd>
         </dl>
-        <br/><hr/><br/>
-        <h4>The Technical</h4>
+        <h5 data-heading="5">Queer</h5>
         <dl class="desc">
-          <dt><a class="item" href="https://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach">Gödel, Escher, Bach: an Eternal Golden Braid</a><br/><span class="info">Written by Douglas Hofstadter</span></dt>
-          <dd>A family/church friend gifted this to me, or suggested that I be gifted it (I donʼt remember and the difference is largely immaterial to me). He said that musicians read it back to front and mathematicians read it forwards – he implicitly included me in the former, but I read it more or less front to back while I was in high school. I would even bring it to school and show people parts of it, so in a sense it is the original essence I found in my life. I occasionally try to read another of book by the same author, <a href="https://en.wikipedia.org/wiki/Le_Ton_beau_de_Marot">Le Ton Beau de Marot: In Praise of the Music of Language</a>, and Iʼve gotten through more of it than I think, but it is hard to find time/motivation/flow.</dd>
+          <dt id="blue_subtle_dysphoria"><a href="#blue_subtle_dysphoria" data-item></a><a class="item" href="https://medium.com/@AzureFemme/it-wasnt-like-they-said-when-dysphoria-doesn-t-fit-the-script-5f64b5131fb0">It Wasnʼt Like They Said: When Dysphoria Doesnʼt Fit the Script</a><br/><span class="info">By Blue @AzureFemme</span></dt>
+          <dd data-content="blue_subtle_dysphoria"></dd>
         </dl>
-        <h5>Mathematics/Programming</h5>
+        <br data-padding/><hr data-padding/><br data-padding/>
+        <h4 data-heading="4">The Technical</h4>
         <dl class="desc">
-          <dt><a class="item" href="https://homotopytypetheory.org/2016/02/24/parametricity-and-excluded-middle/">Parametricity and excluded middle</a><br/><span class="info">Research by Auke Booij</span></dt>
-          <dd>I regularly share this article with programmers. Having excluded middle obviously breaks parametricity, and this work shows that with univalent foundations, breaking parametricity (at least in this specific way) also recovers excluded middle. My takeaway is that parametricity is a “nice programming property” and LEM is a “nice math property” and so sometimes you want one, sometimes you want the other, depending on what youʼre modelling. In particular, parametricity means that polymorphic functions are transparent in what they do, and LEM grants a secret escape hatch that gives classical reasoning to achieve easier proofs. But you canʼt have it both ways!</dd>
+          <dt id="GEB"><a href="#GEB" data-item></a><a class="item" href="https://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach">Gödel, Escher, Bach: an Eternal Golden Braid</a><br/><span class="info">Written by Douglas Hofstadter</span></dt>
+          <dd data-content="GEB">A family/church friend gifted this to me, or suggested that I be gifted it (I donʼt remember and the difference is largely immaterial to me). He said that musicians read it back to front and mathematicians read it forwards – he implicitly included me in the former, but I read it more or less front to back while I was in high school. I would even bring it to school and show people parts of it, so in a sense it is the original essence I found in my life. I occasionally try to read another of book by the same author, <a href="https://en.wikipedia.org/wiki/Le_Ton_beau_de_Marot">Le Ton Beau de Marot: In Praise of the Music of Language</a>, and Iʼve gotten through more of it than I think, but it is hard to find time/motivation/flow. A good introduction to his views (which I wholeheartedly agree with!) is in an article he wrote for the Atlantic, <a href="https://www.theatlantic.com/technology/archive/2018/01/the-shallowness-of-google-translate/551570/">“The Shallowness of Google Translate”</a>.</dd>
         </dl>
-        <h5>Inventions</h5>
+        <h5 data-heading="5">Mathematics/Programming</h5>
         <dl class="desc">
-          <dt><a class="item" href="https://youtu.be/eUzB0L0mSCI">Underactuated Rotor for Simple Micro Air Vehicles</a><br/><span class="info">Research by J. Paulos, B. Caraher, and M. Yim at UPennʼs ModLab</span></dt>
-          <dd>The simplest design for controlled flight: by oscillating a motorʼs torque in phase with each revolution, they alter pitch of the blades through coupling, allowing them to remove the swashplate (and thus servos) from the equation, demonstrating fully articulated flight with only two motors.</dd>
-          <dt><a class="item" href="https://youtu.be/eUzB0L0mSCI">Can You Recover Sound From Images?</a><br/><span class="info">Research by Abe Davis</span></dt>
-          <dd>This is a mind-blowing idea: recovering sound from video. It turns out that by tracking subtle shifts in the intensity of pixels across edges, you can recreate approximate waveforms of audio waves passing through flimsy objects – and with a fast enough camera you can get back to the range of audible frequencies. I first heard about it in a news release, near the time of the original research or maybe a couple years later. I donʼt really like Veritasium, but itʼs a fun 11-minute reëxploration of the project.</dd>
+          <dt id="tensor_programming"><a href="#tensor_programming" data-item></a><a class="item" href="https://youtu.be/oaIMMclGuog">Can Tensor Programming Be Liberated from the Fortran Data Paradigm?</a><br/><span class="info">Presented by Conal Elliott</span></dt>
+          <dd data-content="tensor_programming">I love the clarity that Conal brings to this subject of highly optimized array processing algorithms. He starts by asking what would the source be for the highly optimized list summation algorithm, why is there all this funny array indexing? Based on the clue of the size needing to be a power of 2, he discovers how a particular shape of binary tree underlies the pattern of array access/recursion. That is, the array indices reflect an underlying tree structure, and that tree structure is also reflected in the pattern of recursion. Along the way he generalizes over generic shapes of trees. He applies this to FFT algorithms, recovering both DIT and DIF and discovering a new implementation. Towards the end of the talk, he mentions that many people view arrays as “closest to machine memory” – but if you think about it, RAM is actually a giant binary tree! Thatʼs my favorite observation.</dd>
+          <dt id="deferring_details"><a href="#deferring_details" data-item></a><a class="item" href="http://liamoc.net/images/deferring.pdf">Deferring the Details and Deriving Programs</a><br/><span class="info">Research by Liam OʼConnor</span></dt>
+          <dd data-content="deferring_details">This paper goes over the details of a simple idea: deferring proof obligations for later, using applicative/monadic syntax. I had this idea independently and was pointed to the paper. It turns out that the obvious implementation (keeping track of a list of independent(!) proof obligations) produces only an applicative functor, but you can upgrade it to a monad with some additional work (by keeping track of proof obligations as a composite type, viz. dependent sums). What I love about this idea is that it captures mathematical practice really nicely: you donʼt want to interrupt a long proof with an unimportant sidequest, you just assume it and provide the proof later. You could of course put it as a lemma, but thatʼs not automatic: it requires you to think about the proper statement and what ingredients you need for it.</dd>
+          <dt id="parametricity_lem"><a href="#parametricity_lem" data-item></a><a class="item" href="https://homotopytypetheory.org/2016/02/24/parametricity-and-excluded-middle/">Parametricity and excluded middle</a><br/><span class="info">Research by Auke Booij</span></dt>
+          <dd data-content="parametricity_lem">I regularly share this article with programmers. Having excluded middle obviously breaks parametricity, and this work shows that with univalent foundations, breaking parametricity (at least in this specific way) also recovers excluded middle. My takeaway is that parametricity is a “nice programming property” and LEM is a “nice math property” and so sometimes you want one, sometimes you want the other, depending on what youʼre modelling. In particular, parametricity means that polymorphic functions are transparent in what they do, and LEM grants a secret escape hatch that gives classical reasoning to achieve easier proofs. But you canʼt have it both ways!</dd>
+        </dl>
+        <h5 data-heading="5">Inventions</h5>
+        <dl class="desc">
+          <dt id="modlab_underactuated_rotor"><a href="#modlab_underactuated_rotor" data-item></a><a class="item" href="https://www.modlabupenn.org/underactuated-rotor/">Underactuated Rotor for Simple Micro Air Vehicles</a><br/><span class="info">Research by J. Paulos, B. Caraher, and M. Yim at UPennʼs ModLab</span></dt>
+          <dd data-content="modlab_underactuated_rotor">The simplest design for controlled flight: by oscillating a motorʼs torque in phase with each revolution, they alter pitch of the blades through coupling, allowing them to remove the swashplate (and thus servos) from the equation, demonstrating fully articulated flight with only two motors.</dd>
+          <dt id="sound_from_video"><a href="#sound_from_video" data-item></a><a class="item" href="https://youtu.be/eUzB0L0mSCI">Can You Recover Sound From Images?</a><br/><span class="info">Research by Abe Davis</span></dt>
+          <dd data-content="sound_from_video">This is a mind-blowing idea: recovering sound from video. It turns out that by tracking subtle shifts in the intensity of pixels across edges, you can recreate approximate waveforms of audio waves passing through flimsy objects – and with a fast enough camera you can get back to the range of audible frequencies. I first heard about it in a news release, near the time of the original research or maybe a couple years later. I donʼt really like Veritasium, but itʼs a fun 11-minute reëxploration of the project.</dd>
         </dl>
       </div>
     </div>

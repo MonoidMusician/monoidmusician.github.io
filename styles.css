@@ -47,16 +47,14 @@ h1 + p, h1 + p + p {
 }
 #portals > * {
   margin-top: 2em;
-  border-top: 1px solid #86cad1;
+  border-top: 1px solid var(--accent, #86cad1);
   padding-top: 2em;
 }
 hr {
-  border-color: #86cad1;
-  border-style: solid;
-  border-width: 1px;
-  border-bottom: none;
+  border: 0;
+  border-top: 1px solid var(--accent, #86cad1);
 }
-#portals > * > * {
+#portals > * > *, #portals > * > [data-content] > * {
   margin: auto; text-align: center;
 }
 #portals > * > h5:not(.subtitle) {
@@ -82,7 +80,7 @@ h2 {
   transition: color 0.6s;
 }
 h2:hover {
-  color: #86cad1;
+  color: var(--accent, #86cad1);
 }
 h3 {
   font-size: 30pt;
@@ -115,20 +113,20 @@ h5 {
   transform: rotate(0deg);
 }
 
-#portals ul, #portals ul li, #portals ul ul li {
+#portals > div > ul, #portals > div > ul > li, #portals > div > ul > ul > li {
   margin: 0;
   padding: 0;
   text-indent: 0;
   list-style-type: none;
 }
-#portals ul {
+#portals > div > ul {
   font-size: 20pt;
 }
-#portals li::before, #portals li::after {
+#portals > div > ul > li::before, #portals > div > ul > li::after {
   content: " • ";
 }
 
-#portals .desc, .longform p {
+#portals .desc, .longform p, .longform ul, .longform ol {
   padding: 0 5%;
   margin: auto;
   text-align: justify;
@@ -163,7 +161,11 @@ h5 + .desc p:first-child {
   }
 }
 
+div.center {
+  margin: auto;
+}
 div.poem {
+  margin: auto;
   white-space: pre-line;
   width: -moz-fit-content;
   width: fit-content;
@@ -188,7 +190,7 @@ dd {
   margin-inline-start: calc(2em - 10px);
   font-family: Bellefair;
   font-size: 85%;
-  border-left: 2px solid #86cad1;
+  border-left: 2px solid var(--accent, #86cad1);
   padding-left: 8px;
   line-height: 1.1;
 }
@@ -205,4 +207,45 @@ dd a[href] {
   dd {
     margin-bottom: 2.5em;
   }
+}
+
+[data-item] {
+  margin-left: -1em;
+  padding-left: 1em;
+}
+
+[data-item]::before {
+  content: "";
+  font-weight: lighter;
+  width: 1em;
+  display: inline-block;
+  margin-left: -1em;
+  cursor: pointer;
+}
+
+:hover > [data-item]::before, [data-item]:hover::before,
+[data-item=hash]::before, [data-item=focus]::before {
+  content: "#";
+}
+[data-item=focus]:not(:hover)::before {
+  color: var(--accent, #86cad1);
+}
+[data-item=""]:hover::before {
+  opacity: 0.7;
+}
+[data-item=hash]:hover::before {
+  opacity: 0.3;
+}
+[data-content] {
+  overflow: hidden;
+  /*transition: 1s margin, 1s max-height;*/
+}
+
+[data-fill=fill], #portals [data-fill=fill] {
+  padding-bottom: 80vh;
+}
+
+#portals > * > br + h4 {
+  margin-top: -16pt;
+  padding-top: 16pt;
 }

@@ -12,6 +12,7 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"/>
     <meta name="msapplication-TileColor" content="#1f6e3e"/>
     <meta name="theme-color" content="#ffffff"/>
+    <script type="text/javascript" src="interaction.js"></script>
     <style>
       h1 {
         color: #dff5ed;
@@ -25,15 +26,8 @@
       ::selection {
         background-color: #b9aa4288;
       }
-      #portals > * {
-        border-top-color: #b980b5;
-      }
-      hr {
-        border: 0;
-        border-top: 1px solid #b980b5;
-      }
-      dd {
-        border-left-color: #b980b5;
+      body {
+        --accent: #b980b5;
       }
     </style>
   </head>
@@ -45,9 +39,9 @@
       <div id="violonscheelist">
         <h2><a href="violonscheelist.html">Violon&#173;Scheelist</a></h2>
         <h3>Compositions</h3>
-        <dl class="desc">
-          <dt><a href="https://soundcloud.com/violonscheelist/bb4c">bB4C (18–22 Februrary 2022)</a> <a href="https://drive.google.com/drive/folders/1f_q3DwXcK2_5chQOMZQ3CCszAf3BKOXn?usp=sharing">[files]</a></dt>
-          <dd>
+        <dl class="desc" data-fill="fill">
+          <dt id="bB4C"><a href="#bB4C" data-item></a><a href="https://soundcloud.com/violonscheelist/bb4c">bB4C (18–22 Februrary 2022)</a> <a href="https://drive.google.com/drive/folders/1f_q3DwXcK2_5chQOMZQ3CCszAf3BKOXn?usp=sharing">[files]</a></dt>
+          <dd data-content="bB4C">
             <p>Composed for “Electroacoustic Composition Seminar” with <a href="https://www.sarah-hennies.com/">Sarah Hennies</a> at Bard. This piece was thrown together over 5 days since I got the assignment late, but I enjoyed the process and this piece is all about that process I followed to create it.</p>
             <details>
               <summary>I recommend you listen to the piece first, but here is my analysis/process for it:</summary>
@@ -64,22 +58,22 @@
             <p>For instance, did you know that if you cut off bowed part of a bowed note (and only capture the ringing after the release), it is almost exactly the sound of pizzicato? Thatʼs because pizzicato pulls the string to a certain amplitude and just lets it resonate. So even though I didnʼt record pizzicato, I still have the option of working with that sound.</p>
             <p>Maybe I will make a short version as a gradual phone alarm, who knows?</p>
           </dd>
-          <dt><a href="https://flat.io/score/5ecac01493f48e407597d9f9-czajkowski-canzonetta?sharingKey=98c18714563dba5f480e66100fdf0f7363b661f99351a995d5c2251192415216bc0eb2d8fe824990117d0596586b775e50936dfacf444936ba3bf26c2ff88f56">Czajkowski Canzonetta (May 2020)</a> <a href="https://drive.google.com/file/d/1wuARmK0zkhu4gpS_nMvE8W__kdtfJzkX/view?usp=drivesdk">[recording]</a></dt>
-          <dd>My brother asked me to arrange the slow movement of Tchaikovskyʼs Violin Concerto for me to accompany him for our grandmotherʼs memorial service. At first I was like no way, those notes wonʼt fit as a duet. But with some score study and creativity I was able to reduce the piano reduction to a violin and cello duet. We have always been fascinated with different spellings of Tchaikovskyʼs name, so this is the Polish spelling Czajkowski. The recording is from the memorial service. Dedicated to our many wonderful memories with Wilma Scheel. 💙</dd>
-          <dt><a href="https://flat.io/score/5e9d385462558f7ec06378c7-panacea?sharingKey=dec88e7db7dca3864ef63e104c8d56ba18320b02344e624b598e99265e39fbb62851cb577adf3bfb38bb5d2dc1747d1bec241121c35d958db5fc9dedf4c21d7a">Panacea (May 2020)</a></dt>
-          <dd>My second composition for Joan Towerʼs class, a duet for two violas composed around the time we were starting to feel the creeping effects of the pandemic at Bard, especially after most students took the option of going home for spring break and staying (myself included). It explores a bit the aspect of community connection and somatic safety that was and still is a struggle. Itʼs a good example of the type of music I want to see more of in the world. Iʼve been revisiting it lately, fleshing out some ideas and adding more to it – stay tuned for Panacea Tuttora.</dd>
-          <dt><a href="https://drive.google.com/file/d/1TGH8FY8SkHd_CK0cpHu8WVEmgN0Mw6MM/view?usp=sharing">Goldenrod Rhapsody (March 2020)</a></dt>
-          <dd>My first composition for Joan Towerʼs class, for solo clarinet (B-flat). Music available upon request.</dd>
-          <dt><a href="https://flat.io/score/5d1526e66039e056bf08b504-heptatonia-tertia?sharingKey=0bbb1afdfc5dc77dcce2b3d112086290554dcdc2373902aa8c4b7ebc2487099a4a79517cbe64e0f56065fc269cb4f8632b7861c8eae2bf9bdf678bc677522ae8">Heptatonia Tertia (2019)</a></dt>
-          <dd>Some brief experiments in <a href="https://en.wikipedia.org/wiki/Heptatonic_scale#Heptatonia_tertia">Heptatonia Tertia</a>.</dd>
-          <dt><a href="https://flat.io/score/5cce0ccb23877b67b098df61-duetti?sharingKey=ae4e0ab85945adb16f876bcbe8755d4764ec1f9e7a6ab278cbc708f282f7c72b0eea95b055da56bacc99a72e1fbbc5170d03200ad563a494f47d6b3184a1665a">Duetti [for oboe and cello] (May, July 2019)</a></dt>
-          <dd>I wrote this for Rob Clower and myself. I think we read it together once, and I can still hear Robʼs tone on the oboe and the distinctive way he takes breaths in my head as I listen to it.</dd>
-          <dt><a href="https://flat.io/score/5c5ef6a1eee8d63c1ea9f2ef-wormhills?sharingKey=aa7d5ad06c3030690aeba11362e9ab5c717a47e3d0b12ac0a6f5e5e3cdbf61a3ca67855295fa7d9e7bd8d526b69edaf3c2ae4613ac8b1b6ce8b4788c7f3b100a">Wormhills (Februrary–March 2019)</a></dt>
-          <dd>The beginning of my second semester at Bard. My dear friend Rob Clower and I are taking the train to NYC to see Brahms Requiem with the NY Phil, and I tell him this story: I have this distinct memory of being driven around when I was tiny and believing that hills were formed by giant earthworms burrowing under the earth. Itʼs the kind of belief that seems like it must have been gotten from a book or a dream, but no book I know says that. Oh to have such an brilliantly free imagination again. He says that it is very interesting, I should turn it into a piece. “No, Rob, thatʼs ridiculous – itʼs not <emph>music</emph>” I think. But I do. Armed with a semester of music theory and no knowledge of how organs work, I write this piece. It has never seen any realization outside MIDI and my head. And, I donʼt know, itʼs still pretty cool. Thanks for your encouragement, Rob. All my love.</dd>
-          <dt><a href="https://flat.io/score/58f21c0cd466f943cba64bc2-sketches?sharingKey=a02c75e4222095e7ef0dfea36a1fe3c4602b5cc2ea52457bcf3c0f72e2facaea45bdd196477a9615115f0966848517e16e66327a9c1dc592a3af4ca0afe2f78f">Sketches (2017–)</a></dt>
-          <dd>Just a collection of sketches Iʼve kept over the years. Donʼt take it too seriously! (Two sketches are knowingly stolen from other sources, one with a really really terrible “harmonization”, sorry about that. Plus a cadenza to an existing piece (hint: itʼs for oboe). Other sketches may unknowingly influenced by other things of course.)</dd>
-          <dt><a href="https://flat.io/score/59244674d3434a0b790c6ff9-terra-patris?sharingKey=fd768bb70a7fffe4f5e6c8bbe21885fe2034ac43c57000a2cd4f9ef97c129322ee87dc4e350c1eae4d3eba8337320ebdf87a8e4e8dc3461826def550a2c44413">Terra Patris (2017)</a></dt>
-          <dd>Just a translation of a hymn into Latin that already had a Latin title but was not originally in Latin.</dd>
+          <dt id="canzonetta"><a href="#canzonetta" data-item></a><a href="https://flat.io/score/5ecac01493f48e407597d9f9-czajkowski-canzonetta?sharingKey=98c18714563dba5f480e66100fdf0f7363b661f99351a995d5c2251192415216bc0eb2d8fe824990117d0596586b775e50936dfacf444936ba3bf26c2ff88f56">Czajkowski Canzonetta (May 2020)</a> <a href="https://drive.google.com/file/d/1wuARmK0zkhu4gpS_nMvE8W__kdtfJzkX/view?usp=drivesdk">[recording]</a></dt>
+          <dd data-content="canzonetta">My brother asked me to arrange the slow movement of Tchaikovskyʼs Violin Concerto for me to accompany him for our grandmotherʼs memorial service. At first I was like no way, those notes wonʼt fit as a duet. But with some score study and creativity I was able to reduce the piano reduction to a violin and cello duet. We have always been fascinated with different spellings of Tchaikovskyʼs name, so this is the Polish spelling Czajkowski. The recording is from the memorial service. Dedicated to our many wonderful memories with Wilma Scheel. 💙</dd>
+          <dt id="panacea"><a href="#panacea" data-item></a><a href="https://flat.io/score/5e9d385462558f7ec06378c7-panacea?sharingKey=dec88e7db7dca3864ef63e104c8d56ba18320b02344e624b598e99265e39fbb62851cb577adf3bfb38bb5d2dc1747d1bec241121c35d958db5fc9dedf4c21d7a">Panacea (May 2020)</a></dt>
+          <dd data-content="panacea">My second composition for Joan Towerʼs class, a duet for two violas composed around the time we were starting to feel the creeping effects of the pandemic at Bard, especially after most students took the option of going home for spring break and staying (myself included). It explores a bit the aspect of community connection and somatic safety that was and still is a struggle. Itʼs a good example of the type of music I want to see more of in the world. Iʼve been revisiting it lately, fleshing out some ideas and adding more to it – stay tuned for Panacea Tuttora.</dd>
+          <dt id="goldenrod_rhapsody"><a href="#goldenrod_rhapsody" data-item></a><a href="https://drive.google.com/file/d/1TGH8FY8SkHd_CK0cpHu8WVEmgN0Mw6MM/view?usp=sharing">Goldenrod Rhapsody (March 2020)</a></dt>
+          <dd data-content="goldenrod_rhapsody">My first composition for Joan Towerʼs class, for solo clarinet (B-flat). Music available upon request.</dd>
+          <dt id="heptatonia_tertia"><a href="#heptatonia_tertia" data-item></a><a href="https://flat.io/score/5d1526e66039e056bf08b504-heptatonia-tertia?sharingKey=0bbb1afdfc5dc77dcce2b3d112086290554dcdc2373902aa8c4b7ebc2487099a4a79517cbe64e0f56065fc269cb4f8632b7861c8eae2bf9bdf678bc677522ae8">Heptatonia Tertia (2019)</a></dt>
+          <dd data-content="heptatonia_tertia">Some brief experiments in <a href="https://en.wikipedia.org/wiki/Heptatonic_scale#Heptatonia_tertia">Heptatonia Tertia</a>.</dd>
+          <dt id="duetti_oboe_cello"><a href="#duetti_oboe_cello" data-item></a><a href="https://flat.io/score/5cce0ccb23877b67b098df61-duetti?sharingKey=ae4e0ab85945adb16f876bcbe8755d4764ec1f9e7a6ab278cbc708f282f7c72b0eea95b055da56bacc99a72e1fbbc5170d03200ad563a494f47d6b3184a1665a">Duetti [for oboe and cello] (May, July 2019)</a></dt>
+          <dd data-content="duetti_oboe_cello">I wrote this for Rob Clower and myself. I think we read it together once, and I can still hear Robʼs tone on the oboe and the distinctive way he takes breaths in my head as I listen to it.</dd>
+          <dt id="wormhills"><a href="#wormhills" data-item></a><a href="https://flat.io/score/5c5ef6a1eee8d63c1ea9f2ef-wormhills?sharingKey=aa7d5ad06c3030690aeba11362e9ab5c717a47e3d0b12ac0a6f5e5e3cdbf61a3ca67855295fa7d9e7bd8d526b69edaf3c2ae4613ac8b1b6ce8b4788c7f3b100a">Wormhills (Februrary–March 2019)</a></dt>
+          <dd data-content="wormhills">The beginning of my second semester at Bard. My dear friend Rob Clower and I are taking the train to NYC to see Brahms Requiem with the NY Phil, and I tell him this story: I have this distinct memory of being driven around when I was tiny and believing that hills were formed by giant earthworms burrowing under the earth. Itʼs the kind of belief that seems like it must have been gotten from a book or a dream, but no book I know says that. Oh to have such an brilliantly free imagination again. He says that it is very interesting, I should turn it into a piece. “No, Rob, thatʼs ridiculous – itʼs not <emph>music</emph>” I think. But I do. Armed with a semester of music theory and no knowledge of how organs work, I write this piece. It has never seen any realization outside MIDI and my head. And, I donʼt know, itʼs still pretty cool. Thanks for your encouragement, Rob. All my love.</dd>
+          <dt id="sketches"><a href="#sketches" data-item></a><a href="https://flat.io/score/58f21c0cd466f943cba64bc2-sketches?sharingKey=a02c75e4222095e7ef0dfea36a1fe3c4602b5cc2ea52457bcf3c0f72e2facaea45bdd196477a9615115f0966848517e16e66327a9c1dc592a3af4ca0afe2f78f">Sketches (2017–)</a></dt>
+          <dd data-content="sketches">Just a collection of sketches Iʼve kept over the years. Donʼt take it too seriously! (Two sketches are knowingly stolen from other sources, one with a really really terrible “harmonization”, sorry about that. Plus a cadenza to an existing piece (hint: itʼs for oboe). Other sketches may unknowingly influenced by other things of course.)</dd>
+          <dt id="terra_patris"><a href="#terra_patris" data-item></a><a href="https://flat.io/score/59244674d3434a0b790c6ff9-terra-patris?sharingKey=fd768bb70a7fffe4f5e6c8bbe21885fe2034ac43c57000a2cd4f9ef97c129322ee87dc4e350c1eae4d3eba8337320ebdf87a8e4e8dc3461826def550a2c44413">Terra Patris (2017)</a></dt>
+          <dd data-content="terra_patris">Just a translation of a hymn into Latin that already had a Latin title but was not originally in Latin.</dd>
         </dl>
       </div>
     </div>
