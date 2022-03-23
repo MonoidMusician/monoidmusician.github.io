@@ -148,6 +148,14 @@ h5 + .desc p:first-child {
   margin-top: 0;
   margin-block-start: 0;
 }
+.desc p:last-child,
+.desc p:last-child,
+.desc p:last-child,
+.desc p:last-child,
+.desc p:last-child {
+  margin-bottom: 0;
+  margin-block-end: 0;
+}
 
 @media (max-device-width: 600px) {
   #portals .desc, .longform p {
