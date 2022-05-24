@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@500&family=Cinzel+Decorative:wght@700&family=Cinzel:wght@700&family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&family=Bellefair&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@500&family=Cinzel+Decorative:wght@700&family=Cinzel:wght@700&family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&family=Bellefair&family=Petit+Formal+Script&display=swap');
 
 
 
@@ -191,6 +191,7 @@ dt {
 .info {
   font-size: 80%;
   font-style: italic;
+  padding-top: 1em;
 }
 dd {
   margin-bottom: 1.5em;
@@ -262,6 +263,12 @@ dd a[href] {
   position: relative;
   padding: 1em;
   width: fit-content;
+  transition: 0.2s ease-out transform;
+  transform-origin: 1.7em 1.7em;
+  transition-timing-function: cubic-bezier(0.59, 0.04, 0.77, 0.86);
+}
+.clipping:hover {
+  /*transform: rotate(2deg);*/
 }
 .clipping::before {
   content: "";
