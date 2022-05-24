@@ -257,3 +257,27 @@ dd a[href] {
   margin-top: -16pt;
   padding-top: 16pt;
 }
+
+.clipping {
+  position: relative;
+  padding: 1em;
+  width: fit-content;
+}
+.clipping::before {
+  content: "";
+  color: black;
+  top: calc(1em + 0.7em - 4px);
+  left: calc(1em + 0.7em - 4px);
+  position: absolute;
+  border: 1px solid transparent;
+  outline: 1px solid #0110283d;
+  border-radius: 8px;
+  width: 8px;
+  height: 8px;
+  background: #243857;
+}
+.clipping img {
+  border-radius: 20px;
+  box-shadow: 5px 5px 9px #000a23, -5px -5px 9px #123652;
+  max-width: 100%;
+}
