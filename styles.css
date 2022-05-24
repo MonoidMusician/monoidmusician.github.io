@@ -270,7 +270,7 @@ dd a[href] {
   left: calc(1em + 0.7em - 4px);
   position: absolute;
   border: 1px solid transparent;
-  outline: 1px solid #0110283d;
+  box-shadow: 1px 1px 2px 0.2px #ffffff30, 0px 0px 4px 1px #00000080;
   border-radius: 8px;
   width: 8px;
   height: 8px;
