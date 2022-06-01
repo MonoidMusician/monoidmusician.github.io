@@ -55,7 +55,9 @@ hr {
   border-top: 1px solid var(--accent, #86cad1);
 }
 #portals > * > *, #portals > * > [data-content] > * {
-  margin: auto; text-align: center;
+  margin: 0;
+  margin-left: auto; margin-right: auto;
+  text-align: center;
 }
 #portals > * > h5:not(.subtitle) {
   padding-left: 10%;
@@ -64,13 +66,13 @@ hr {
 #portals > * > a > img {
   width: calc(min(90vw, max(100px, 70vh - 70px)));
   height: calc(min(90vw, max(100px, 70vh - 70px)));
-  display: block; margin: auto;
+  display: block; margin-left: auto; margin-right: auto;
   border-radius: 50%;
 }
 #portals > * > img {
   max-width: 90vw;
   max-height: calc(max(100px, 70vh - 70px));
-  display: block; margin: auto;
+  display: block; margin-left: auto; margin-right: auto;
 }
 h2 {
   font-size: 34pt;
@@ -128,7 +130,7 @@ h5 {
 
 #portals .desc, .longform p, .longform ul, .longform ol {
   padding: 0 5%;
-  margin: auto;
+  margin-left: auto; margin-right: auto;
   text-align: justify;
 }
 #portals .desc {
@@ -170,10 +172,10 @@ h5 + .desc p:first-child {
 }
 
 div.center {
-  margin: auto;
+  margin-left: auto; margin-right: auto;
 }
 div.poem {
-  margin: auto;
+  margin-left: auto; margin-right: auto;
   white-space: pre-line;
   width: -moz-fit-content;
   width: fit-content;
@@ -188,10 +190,10 @@ div.poem p {
 dt {
   line-height: 1.2;
 }
-.info {
+.info, #portals > * > .info, #portals > * > [data-content] > .info {
   font-size: 80%;
   font-style: italic;
-  padding-top: 1em;
+  margin-top: 1em;
 }
 dd {
   margin-bottom: 1.5em;
