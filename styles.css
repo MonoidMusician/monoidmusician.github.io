@@ -290,3 +290,23 @@ dd a[href] {
   box-shadow: 5px 5px 9px #000a23, -5px -5px 9px #123652;
   max-width: 100%;
 }
+
+
+
+blockquote {
+  font-style: italic;
+}
+blockquote > p::before {
+  content: "“";
+  font-size: 1.6em;
+  line-height: 0.9;
+  float: left;
+  margin-left: -0.5em;
+}
+blockquote > p:last-child::after {
+  content: "”";
+  font-size: 1.6em;
+  line-height: 0.9;
+  float: right;
+  margin-right: -0.4em;
+}
